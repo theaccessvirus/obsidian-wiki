@@ -78,6 +78,7 @@ Skills live in `.skills/<name>/SKILL.md`. Match the user's intent to the right s
 | "save this" / "/wiki-capture" / "capture this" / "file this conversation" / "/wiki-capture --quick" / "quick capture" / "capture this finding" / "save this gotcha" / "drop to raw" | `wiki-capture` |
 | "/wiki-research [topic]" / "research X" / "find everything about Y" | `wiki-research` |
 | "create a dashboard" / "vault dashboard" / "show all X as a table" / "dynamic view" | `wiki-dashboard` |
+| "dashboard my issues" / "github issues dashboard" / "add an issues board for this repo" / "/wiki-issues-dashboard" | `wiki-issues-dashboard` |
 | "synthesize my wiki" / "find connections" / "what concepts keep coming up together" / "/wiki-synthesize" | `wiki-synthesize` |
 | "create a new skill" | `skill-creator` |
 | "/vault-skill-factory" / "make a skill from my wiki" / "turn these pages into a skill" / "package my notes on X as a skill" / "build a domain-expert skill from my vault" | `vault-skill-factory` |
