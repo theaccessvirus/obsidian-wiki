@@ -158,6 +158,32 @@ After creating/updating pages:
 - Add `[[wikilinks]]` from existing pages back to the new ones where relevant
 - Link the project overview to all project-specific pages and relevant global pages
 
+## Step 5.5: GitHub Issues Dashboard (optional)
+
+If this project's `origin` is a GitHub remote and the repo has open issues, ensure a
+live issues board exists in the vault. This is the `wiki-issues-dashboard` skill —
+invoke it, or inline its steps:
+
+1. Derive `owner/name` from `git remote get-url origin` (parse ssh and https forms).
+2. `gh issue list -R <owner/name> --state open -L 1 --json number -q 'length'` — if
+   `0` or `gh` is unavailable, skip silently.
+3. Write `$VAULT/dashboards/github/<repo-name>.md` (create the folder if needed),
+   overwriting, with a single `github-issues` block (no frontmatter, filename is the
+   repo name verbatim):
+
+       ```github-issues
+       repo: <owner/name>
+       state: open
+       ```
+
+4. Link it from the project overview page under a "Tracking" section — embed with
+   `![[dashboards/github/<repo-name>]]` or link with `[[dashboards/github/<repo-name>]]`.
+5. Append to `log.md`:
+   `- [TIMESTAMP] WIKI_ISSUES_DASHBOARD repo=<owner/name> state=open file=dashboards/github/<repo-name>.md`
+
+Skip silently when origin is not a GitHub remote, `gh` is unavailable, or there are
+no open issues. Rendering requires the GitHub Embeds plugin (`id: github-embeds`).
+
 ## Step 6: Update Tracking
 
 ### Update `.manifest.json`
