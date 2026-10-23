@@ -1,15 +1,13 @@
 ---
 name: wiki-capture
-description: >
-  Save the current conversation as a permanent, structured wiki note. Use this skill when the user
-  says "save this", "/wiki-capture", "capture this", "file this conversation", "preserve this",
-  "add this to my wiki", or wants to turn what was just discussed into lasting knowledge. The skill
-  classifies the content, rewrites it as declarative knowledge (not a chat transcript), and places
-  it in the correct vault category. Also supports a fast QUICK MODE (`/wiki-capture --quick`, "quick
-  capture", "capture this finding", "save this bug fix", "save this gotcha", "drop this to raw", "quick
-  save to wiki") that drops findings to the `_raw/` staging area in under 60 seconds with no manifest
-  or index writes — used by the session-end Stop hook to auto-preserve findings. Accepts inline
-  named-vault routing like "@research save this" via the shared Config Resolution Protocol.
+description: >-
+  Save the current conversation as a permanent, structured wiki note -
+  classified, rewritten as declarative knowledge rather than a transcript,
+  filed in the right vault category. Triggers: "save this", "/wiki-capture",
+  "capture this", "file this conversation", "add this to my wiki". QUICK
+  MODE ("quick capture", "save this gotcha", "drop this to raw", `--quick`)
+  drops findings to `_raw/` in under 60 seconds. Accepts vault routing like
+  "@research".
 ---
 
 # Wiki Capture — Conversation to Wiki Note
